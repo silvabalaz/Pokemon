@@ -1,3 +1,11 @@
-.pokemon{
+.version{
+  margin-top: 2.5em;
+  float: right;
+  color: white;
+  margin-right:80px
+}
+.bold_text {
+  font-weight: bold;
+  font-family: 'Audiowide';font-size: 22px;
 
 }
