@@ -5,22 +5,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { VersionOneComponent } from './version-one/version-one.component';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {AppRoutingModule} from './app-routing.module';
 
-const routes: Routes = [
-  { path: 'versionOne', component:  VersionOneComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    VersionOneComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserAnimationsModule,
     MatButtonModule,
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
