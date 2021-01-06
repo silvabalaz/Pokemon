@@ -5,17 +5,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { VersionOneComponent } from './version-one/version-one.component';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
+import { PokemonsComponent } from './pokemons/pokemons.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    VersionOneComponent,
+    NotFoundComponent,
+    PokemonsComponent
   ],
   imports: [
     BrowserAnimationsModule,
