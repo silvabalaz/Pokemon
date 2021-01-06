@@ -7,8 +7,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { VersionOneComponent } from './version-one/version-one.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { PokemonsComponent } from './pokemons/pokemons.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
   imports: [
     BrowserAnimationsModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule
   ],
