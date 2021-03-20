@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PokemonsComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatTableModule,
