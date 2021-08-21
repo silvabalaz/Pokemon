@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {Pokemon} from '../pokemons/pokemon';
-import {PokemonService} from '../pokemons/pokemon.service';
+import {PokemonModel} from '../model/pokemon.model';
+import {PokemonService} from '../services/pokemon.service';
 
 @Component({
   selector: 'pokemon-version-one',
@@ -9,10 +9,16 @@ import {PokemonService} from '../pokemons/pokemon.service';
   styleUrls: ['./version-one.component.css']
 })
 export class VersionOneComponent implements OnInit {
+
   displayedColumns = ['name', 'type', 'heightWeight', 'signatureAbility', 'baseExperience'];
-  dataSource: MatTableDataSource<Pokemon> = new MatTableDataSource<Pokemon>();
+  dataSource: MatTableDataSource<PokemonModel> = new MatTableDataSource<PokemonModel>();
+
   constructor(private service: PokemonService) {
   }
+
+  /**
+   * Lifecycle function called on initialization
+   */
   ngOnInit(): void {
     let pokemon = [];
     this.service.getPokemon('10', '0').subscribe(response => {
@@ -21,7 +27,7 @@ export class VersionOneComponent implements OnInit {
         console.log(res);
         this.service.getPokemonDetails(res.url).subscribe(resp => {
           console.log(resp);
-          const podatak = new Pokemon();
+          const podatak = new PokemonModel();
           podatak.name = resp.name;
           resp.types.forEach( t => {
             podatak.type += t.type.name + ', ';
@@ -37,7 +43,7 @@ export class VersionOneComponent implements OnInit {
           console.log('podatak '  + podatak.name + ' '  + podatak.baseExperience + ' ' + podatak.signatureAbility + ' ' +
             podatak.weight + ' ' + podatak.height + '  ' + podatak.type);
           pokemon.push(podatak);
-          this.dataSource = new MatTableDataSource<Pokemon>(pokemon);
+          this.dataSource = new MatTableDataSource<PokemonModel>(pokemon);
         });
       });
     });
