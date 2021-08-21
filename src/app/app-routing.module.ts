@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { VersionOneComponent } from './version-one/version-one.component';
-import { PokemonsComponent } from './pokemons/pokemons.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { VersionOneComponent } from './components/version-one/version-one.component';
+import {VersionTwoComponent} from './components/version-two/version-two.component';
 
 const routes: Routes = [
-  {
-    path: '', component: PokemonsComponent,
-    children: [
-      { path: 'home', component: HomeComponent},
-      { path: 'versionOne', component: VersionOneComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' }
-    ]
-  },
+
+  { path: 'home', component: HomeComponent},
+  { path: 'versionOne', component: VersionOneComponent },
+  { path: 'versionTwo', component: VersionTwoComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
   ];
 @NgModule({

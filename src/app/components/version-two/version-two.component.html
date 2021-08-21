@@ -1,0 +1,32 @@
+<mat-card style="width:75%; margin:0 auto;background-color:#b0ab9e;">
+  <mat-card-header style="font-size: xx-large;color:firebrick">
+    Version 2
+  </mat-card-header>
+  <div style="margin-bottom: 25px;">
+    <input matInput style="width:33%; text-align:center;color:#6B8E23;font-size: x-large; "  placeholder="enter name" type="text" [(ngModel)]="pokemonName">
+  </div>
+  <mat-card-content>
+
+    <table mat-table  style="width:100%;background-color:#b0ab9e;" [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let pokemon"> {{pokemon}} </td>
+      </ng-container>
+      <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef> Povećalo </th>
+        <td mat-cell *matCellDef> <button mat-button style="width:33%; text-align:center; color:firebrick; font-size: x-large;">Filter</button></td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="[10]"
+                   (page)="getNextPokemonPage($event)" style="background-color:#b0ab9e;">
+    </mat-paginator>
+  </mat-card-content>
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>

@@ -1,16 +1,13 @@
-<h1 class="mat-h1 bold_text">Welcome to ZABA Pokemon world!</h1>
+<h1 class="mat-h1 bold_text">Welcome to ZABA PokemonModel world!</h1>
 <section class="pokemon is-info is-fullheight is-bold">
   <div class="container-fluid bg-light">
     <div class="vertical-center col-md-12 text-center">
 
       <div class="mat-typography">
         <img style="-webkit-user-select: none;margin: auto;"
-             src="http://www.pngall.com/wp-content/uploads/2016/06/Pokemon-PNG-Clipart.png">
-        <button mat-raised-button class="version" color="primary" >Version 2</button>
-        <button mat-raised-button class="version" color="warn" [routerLink]="['/versionOne']">Version 1</button>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink='/versionOne'>proba</a>
-        </li>
+             src="">
+        <button mat-raised-button class="version" color="warn" (click)="onClickVersionOneButton($event)">Version 1</button>
+        <button mat-raised-button class="version" color="primary" (click)="onClickVersionTwoButton($event)">Version 2</button>
       </div>
     </div>
   </div>
